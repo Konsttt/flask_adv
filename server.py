@@ -35,10 +35,18 @@ class UserView(MethodView):
 
     def delete(self, adv_users_id: int):
         with Session_maker() as session:
-            user = get_adv(adv_users_id, session)
+            user = get_user(adv_users_id, session)
             session.delete(user)
             session.commit()
-            return jsonify({'status': 'deleted'})
+            return jsonify({'status': 'deleted', 'deleted user id': adv_users_id})
+
+
+def get_user(adv_users_id: int, session: Session_maker):
+    user = session.get(User, adv_users_id)
+    if user is None:
+        raise HttpError(404, 'This user not found')
+    return user
+
 
 def get_adv(adv_id: int, session: Session_maker):
     adv = session.get(Adv, adv_id)
