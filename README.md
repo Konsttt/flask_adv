@@ -12,7 +12,7 @@
 ### Запуск:
 
 ```shell
-docker compose up
+docker-compose up -d
 ```
 Далее:
 <br>server.py - RUN.

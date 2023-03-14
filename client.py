@@ -7,13 +7,13 @@ print(resp.text)
 
 # POST создание объявления1
 resp = requests.post('http://127.0.0.1:5000/adv/', json={'title': 'Title1', 'message': 'Message message1',
-                                                         'owner': 'User1', 'owner_id': 10})
+                                                         'owner': 'User1', 'owner_id': 1})
 print(resp.status_code)
 print(resp.text)
 
 # POST создание объявления2
 resp = requests.post('http://127.0.0.1:5000/adv/', json={'title': 'Title2', 'message': 'Message message2',
-                                                         'owner': 'User1', 'owner_id': 10})
+                                                         'owner': 'User1', 'owner_id': 1})
 print(resp.status_code)
 print(resp.text)
 
@@ -40,11 +40,11 @@ print(resp.text)
 
 # POST создание объявления3
 resp = requests.post('http://127.0.0.1:5000/adv/', json={'title': 'Title3', 'message': 'Message message3',
-                                                         'owner': 'User1', 'owner_id': 10})
+                                                         'owner': 'User1', 'owner_id': 1})
 print(resp.status_code)
 print(resp.text)
 
 # Delete user
-resp = requests.delete('http://127.0.0.1:5000/user/10/')
+resp = requests.delete('http://127.0.0.1:5000/user/1/')
 print(resp.status_code)
 print(resp.text)
